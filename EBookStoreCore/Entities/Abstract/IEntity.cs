@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EBookStoreCore.Entities
+namespace EBookStoreCore.Entities.Abstract
 {
     public interface IEntity
     {

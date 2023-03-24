@@ -1,4 +1,4 @@
-﻿using EBookStoreCore.Entities;
+﻿using EBookStoreCore.Entities.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;

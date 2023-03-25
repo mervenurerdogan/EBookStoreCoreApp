@@ -33,6 +33,18 @@ namespace EBookStoreDataAccess.Concrete.Context
         {
             //map classları ekliyoruz
             modelBuilder.ApplyConfiguration(new BookMap());
+            modelBuilder.ApplyConfiguration(new BookAuthorMap());
+            modelBuilder.ApplyConfiguration(new AuthorMap());
+            modelBuilder.ApplyConfiguration(new RoleMap());
+            modelBuilder.ApplyConfiguration(new PublisherHomeMap());
+            modelBuilder.ApplyConfiguration(new CategoryMap());
+            modelBuilder.ApplyConfiguration(new CommentMap());
+            modelBuilder.ApplyConfiguration(new CityMap());
+            modelBuilder.ApplyConfiguration(new OrderListMap());
+            modelBuilder.ApplyConfiguration(new OrderMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
+           
+            
 
         }
 

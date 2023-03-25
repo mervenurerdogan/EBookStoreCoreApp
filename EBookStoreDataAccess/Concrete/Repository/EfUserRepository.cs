@@ -8,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EBookStoreDataAccess.Concrete
+namespace EBookStoreDataAccess.Concrete.Repository
 {
-    public class EfBookRepository : EfEntityRepositoryBase<Book>, IBookRepository
+    public class EfUserRepository : EfEntityRepositoryBase<User>, IUserRepository
     {
-        public EfBookRepository(DbContext dbContext) : base(dbContext)
+        public EfUserRepository(DbContext dbContext) : base(dbContext)
         {
-            
         }
     }
 }

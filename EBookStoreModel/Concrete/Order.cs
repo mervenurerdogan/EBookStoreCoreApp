@@ -19,6 +19,6 @@ namespace EBookStoreModel.Concrete
         public int UserID { get; set; }
         public User User { get; set; }
 
-        public ICollection<OrderList> Books { get; set; }
+        public ICollection<OrderList> OrderLists { get; set; }
     }
 }

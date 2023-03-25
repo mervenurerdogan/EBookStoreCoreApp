@@ -1,4 +1,5 @@
-﻿using EBookStoreModel.Concrete;
+﻿using EBookStoreDataAccess.Concrete.Mapping;
+using EBookStoreModel.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,12 @@ namespace EBookStoreDataAccess.Concrete.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-A3TFP9F;Database=EBookStoreDatabase;Trusted_Connection=True;TrustServerCertificate=True");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //map classları ekliyoruz
+            modelBuilder.ApplyConfiguration(new BookMap());
+
         }
 
     }

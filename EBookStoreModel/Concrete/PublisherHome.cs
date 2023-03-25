@@ -13,6 +13,7 @@ namespace EBookStoreModel.Concrete
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public int  CityID { get; set; }
+        public virtual City City { get; set; }
 
         public ICollection<Book> Books { get; set; }
 

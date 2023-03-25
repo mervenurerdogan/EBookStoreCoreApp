@@ -24,5 +24,7 @@ namespace EBookStoreModel.Concrete
         public Role Role { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
     }
 }

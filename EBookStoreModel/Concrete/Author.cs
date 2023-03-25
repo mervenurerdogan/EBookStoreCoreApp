@@ -13,6 +13,6 @@ namespace EBookStoreModel.Concrete
         public string SurName { get; set; }
         public string EMail { get; set; }
 
-        public ICollection<BookAuthor> Books { get; set; }
+        public ICollection<BookAuthor> BookAuthors { get; set; }
     }
 }

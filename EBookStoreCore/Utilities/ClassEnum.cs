@@ -37,6 +37,16 @@ namespace EBookStoreCore.Utilities
             Admin = 3
         }
 
+        public enum ResultStatus
+        {
+            Success=0,
+            Error=1,//ResultStatus.Error
+            Warning=2, 
+            Info = 3
+
+
+        }
+
 
     }
 }

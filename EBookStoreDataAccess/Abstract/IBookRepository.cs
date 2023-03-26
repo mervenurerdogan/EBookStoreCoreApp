@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace EBookStoreDataAccess.Abstract
 {
-    public interface IBookRepository:IEntityRepository<Book>
+    public interface IBookRepository : IEntityRepository<Book>
     {
-
+        Task GetAllAsync(Func<Book, bool> value1, bool v, Func<Book, object> value2, Func<Book, object> value3);
     }
 }

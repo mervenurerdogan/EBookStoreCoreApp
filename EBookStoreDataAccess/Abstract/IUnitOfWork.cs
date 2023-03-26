@@ -20,7 +20,7 @@ namespace EBookStoreDataAccess.Abstract
         IRoleRepository Roles { get; }
         IUserRepository Users { get; }
 
-        Task<int> SaveAsyn();
+        Task<int> SaveAsync();
 
         //_unitofwork.Categories.AddAsync() şeklinde kullanım sağlayacağız
         //_unitofwork.Books.AddAsync(book);

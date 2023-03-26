@@ -42,10 +42,10 @@ namespace EBookStoreDataAccess.Concrete.Mapping
             {
                 ID = 1,
                 Name="Merve",
-                Surname="Erdoğan",
+                Surname="Erdoğannnnnn",
                 RoleID=1,
                 UserName="merveeeeenureeee",
-                Password="zfdnkjzdfvjfd",
+                Password="avavav",
                 EMail="merveee@gmail.com",
                 PhoneNumber="222222222",
                 IsActive=true,

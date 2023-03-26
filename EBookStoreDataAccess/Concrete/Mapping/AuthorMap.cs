@@ -31,6 +31,7 @@ namespace EBookStoreDataAccess.Concrete.Mapping
             { ID=1,
             FirstName="Fisun",
             SurName="Atay",
+            EMail="fisun@gmail.com",
             IsActive=true,
             IsDeleted=false,
             CreatedDate=DateTime.Now,
@@ -43,7 +44,8 @@ namespace EBookStoreDataAccess.Concrete.Mapping
                 FirstName="Ceylan",
                 SurName= "Ertem",
                 IsActive=true,
-                IsDeleted=false,
+                EMail = "Ceylan@gmail.com",
+                IsDeleted =false,
                 CreatedDate=DateTime.Now,
             }
             

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EBookStoreDataAccess.Abstract
 {
-    internal interface IAuthorRepository:IEntityRepository<Author>
+    public interface IAuthorRepository:IEntityRepository<Author>
     {
     }
 }

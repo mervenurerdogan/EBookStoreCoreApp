@@ -1,4 +1,5 @@
 ﻿using EBookStoreCore.Concrete.EntityFramework;
+using EBookStoreDataAccess.Abstract;
 using EBookStoreModel.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EBookStoreDataAccess.Concrete.Repository
 {
-    public class EfOrderRepository : EfEntityRepositoryBase<Order>
+    public class EfOrderRepository : EfEntityRepositoryBase<Order>,IOrderRepository
     {
         public EfOrderRepository(DbContext dbContext) : base(dbContext)
         {

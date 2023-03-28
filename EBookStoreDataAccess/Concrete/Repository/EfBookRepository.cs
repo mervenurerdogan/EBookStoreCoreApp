@@ -15,5 +15,10 @@ namespace EBookStoreDataAccess.Concrete.Repository
         public EfBookRepository(DbContext dbContext) : base(dbContext)
         {
         }
+
+        public Task GetAllAsync(Func<Book, bool> value1, bool v, Func<Book, object> value2, Func<Book, object> value3)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

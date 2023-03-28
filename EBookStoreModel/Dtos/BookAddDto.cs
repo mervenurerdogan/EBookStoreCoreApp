@@ -64,6 +64,11 @@ namespace EBookStoreModel.Dtos
         public int PublisherHomeID { get; set; }
         public  PublisherHome PublisherHome { get; set; }
 
+        [DisplayName("Kitap aktif mi?")]
+        [Required(ErrorMessage = "{0} boş geçilmemelidir...")]
+
+        public bool IsActive { get; set; }
+
 
     }
 }

@@ -1,8 +1,32 @@
-﻿@{
+﻿@model List<EBookStoreModel.Concrete.Book>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Language</th>
+               
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach(var i in Model )
+                {
+                    <td>@i.Name</td>
+                    <td>@i.Price</td>
+                    <td>@i.Language</td>
+                    
+                }
+            </tr>
+        </tbody>
+    </table>
 </div>

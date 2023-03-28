@@ -9,8 +9,14 @@ using System.Threading.Tasks;
 
 namespace EBookStoreDataAccess.Concrete.Context
 {
+   
     public class EBookStoreContext:DbContext
     {
+        public EBookStoreContext(DbContextOptions<EBookStoreContext> options):base(options)
+        {
+
+        }
+      
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<BookAuthor> BookAuthors { get; set; }

@@ -1,21 +1,28 @@
-using AutoMapper;
+
 using EBookStoreBusiness.Abstract;
 using EBookStoreBusiness.Concrete;
+using EBookStoreBusiness.Extensions;
 using EBookStoreDataAccess.Abstract;
 using EBookStoreDataAccess.Concrete;
 using EBookStoreDataAccess.Concrete.Context;
+using EBookStoreDataAccess.Concrete.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<ICategoryService, CategoryService>();
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-//builder.Services.AddTransient<IMapper, Mapper>();
-builder.Services.AddDbContext<EBookStoreContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("NewConn")));
+builder.Services.LoadMyServices();
+//builder.Services.AddTransient<ICategoryService, CategoryService>().AddTransient<UnitOfWork>();
+
+////builder.Services.AddTransient<ICategoryRepository, EfCategoryRepository>();
+//builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+////builder.Services.AddTransient<IMapper, Mapper>();
+
+//builder.Services.AddDbContext<EBookStoreContext>(options =>
+//            options.UseSqlServer(builder.Configuration.GetConnectionString("NewConn")));
 
 //builder.Services.AddTransient<DbContext,EBookStoreContext>();
 //builder.Services.AddTransient<ICategoryService,CategoryService>();

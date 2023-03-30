@@ -1,0 +1,23 @@
+﻿@model EBookStoreModel.Dtos.CategoryAddDto
+
+@{
+}
+
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.Name)
+
+    @Html.TextBoxFor(x=>x.Name,new { @class="form-control"})
+    <br />
+
+    @Html.LabelFor(x=>x.Description)
+
+    @Html.TextBoxFor(x=>x.Description,new { @class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.IsActive)
+
+    @Html.TextBoxFor(x=>x.IsActive,new { @class="form-control"})
+    <br />
+    <button class="btn btn-outline-info"> Ekle</button>
+</form>
+

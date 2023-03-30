@@ -1,0 +1,51 @@
+﻿@model List<EBookStoreModel.Concrete.Category>
+@{
+
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Hii EBookStore Project</h1>
+    <p> <a href="https://docs.microsoft.com/aspnet/core">Kategori Index Listesi</a>.</p>
+
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kategori</th>
+                <th>Kategori Açıklama</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>Kategori Aktif Mi ?</th>
+                <th>Kategori Silinmiş Mi ?</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.ID</td>
+                    <td>@i.Name</td>
+                    <td>@i.Description</td>
+                    <td>@i.CreatedDate.ToShortDateString()</td>
+                    <td>@i.IsActive</td>
+                    <td>@i.IsDeleted</td>
+                 
+
+                </tr>
+
+
+
+            }
+
+        </tbody>
+    </table>
+
+    <a href="/Category/CategoryAdd" class="btn btn-outline-warning">Kitap Kategori Ekle</a>
+</div>
+
+
+

@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace EBookStoreBusiness.AutoMapper.Profiles
 {
-    public class BookProfile : Profile
+    public class BookProfile:Profile
     {
         public BookProfile()
         {
             CreateMap<BookAddDto, Book>().ForMember(dest=>dest.CreatedDate,opt=>opt.MapFrom(x=>DateTime.Now));
             CreateMap<BookUpdateDto, Book>();
-            
+
         }
     }
 }

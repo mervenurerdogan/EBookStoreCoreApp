@@ -1,32 +1,50 @@
-﻿@model List<EBookStoreModel.Concrete.Book>
+﻿@model List<EBookStoreModel.Concrete.Category>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="text-center">
+        <h1 class="display-4">Hii EBookStore Project</h1>
+        <p> <a href="https://docs.microsoft.com/aspnet/core">Kategori Listesi</a>.</p>
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Language</th>
-               
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                @foreach(var i in Model )
-                {
+
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>Kategori </th>
+                    <th>Kategori Açıklama</th>
+                    <th> Oluşturulma Tarihi</th>
+                    <th>Kategori Aktif Mi ?</th>
+                    <th>Kategori Silinmiş Mi ?</th>
+                   
+
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+              
+                    @foreach (var i in Model)
+                    {<tr>
+                    <td>@i.ID</td>
                     <td>@i.Name</td>
-                    <td>@i.Price</td>
-                    <td>@i.Language</td>
-                    
-                }
-            </tr>
-        </tbody>
-    </table>
-</div>
+                    <td>@i.Description</td>
+                    <td>@i.CreatedDate.ToShortDateString()</td>
+                    <td>@i.IsActive</td>
+                    <td>@i.IsDeleted</td>
+                  
+                    </tr>
+                       
+
+
+                    }
+                
+            </tbody>
+        </table>
+    </div>
+
+
+

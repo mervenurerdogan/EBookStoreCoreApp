@@ -3,6 +3,7 @@ using EBookStoreBusiness.Concrete;
 using EBookStoreMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using static EBookStoreCore.Utilities.ClassEnum;
 
 namespace EBookStoreMVC.Controllers
 {
@@ -15,10 +16,14 @@ namespace EBookStoreMVC.Controllers
             _bookService = bookService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-           var dgr= _bookService.GetAll();
-            return View(dgr);
+           var dgr= await _bookService.GetAllByNonDeleted();
+            if (dgr.ResultStatus == ResultStatus.Success)
+            {
+                return View(dgr.Data);
+            }
+            return View();
         }
 
         public IActionResult Privacy()

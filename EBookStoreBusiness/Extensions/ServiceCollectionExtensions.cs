@@ -19,9 +19,9 @@ namespace EBookStoreBusiness.Extensions
             serviceCollection.AddDbContext<EBookStoreContext>();
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();//ilişki kesildğinde scopped yapısıda kendisini kapatır
             
-            serviceCollection.AddScoped<ICategoryService, CategoryService>();
-            serviceCollection.AddScoped<IBookService, BookService>();
-            serviceCollection.AddScoped<IUserService, UserService>();
+            serviceCollection.AddTransient<ICategoryService, CategoryService>().AddTransient<UnitOfWork>();
+            serviceCollection.AddTransient<IBookService, BookService>().AddTransient<UnitOfWork>();
+            serviceCollection.AddTransient<IUserService, UserService>().AddTransient<UnitOfWork>();
 
             return serviceCollection;
             

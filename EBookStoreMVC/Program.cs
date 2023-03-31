@@ -13,9 +13,11 @@ using System.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();//her iþlem sonrasýn tekrar tekrar derlemeye gerek kalmýyor.Derleemden de kaydedilen deðiþiklikler görülebilir
+builder.Services.AddAutoMapper(typeof(Program).Assembly);//derleme esnasýnda Automapper istenen classlarý taramýþ oluyor
 builder.Services.LoadMyServices();
-//builder.Services.AddTransient<ICategoryService, CategoryService>().AddTransient<UnitOfWork>();
+
+builder.Services.AddTransient<ICategoryService, CategoryService>().AddTransient<UnitOfWork>();
 
 ////builder.Services.AddTransient<ICategoryRepository, EfCategoryRepository>();
 //builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
@@ -24,9 +26,7 @@ builder.Services.LoadMyServices();
 //builder.Services.AddDbContext<EBookStoreContext>(options =>
 //            options.UseSqlServer(builder.Configuration.GetConnectionString("NewConn")));
 
-//builder.Services.AddTransient<DbContext,EBookStoreContext>();
-//builder.Services.AddTransient<ICategoryService,CategoryService>();
-//builder.Services.AddTransient<IUserService,UserService>();
+
 
 
 var app = builder.Build();
@@ -46,12 +46,22 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapAreaControllerRoute(
+        name:"Admin",
+        areaName:"Admin",
+        pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
+
+        );
+    endpoints.MapDefaultControllerRoute();
+});
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();

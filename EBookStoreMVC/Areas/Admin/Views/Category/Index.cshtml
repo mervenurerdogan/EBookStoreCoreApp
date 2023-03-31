@@ -1,0 +1,29 @@
+﻿@using static EBookStoreCore.Utilities.ClassEnum;
+@model EBookStoreModel.Dtos.CategoryListDto
+@if (Model.ResultStatus == ResultStatus.Success)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Açıklama</th>
+                <th>Aktif mi?</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                @foreach(var i in Model.Categories)
+                {
+                   <tr>
+                       <td>@i.ID</td>
+                       <td>@i.Name</td>
+                       <td>@i.Description</td>
+                       <td>@i.IsActive</td>
+                   </tr>
+                }
+          
+        </tbody>
+    </table>
+    
+}

@@ -2,13 +2,15 @@
 @model EBookStoreModel.Dtos.CategoryListDto
 @if (Model.ResultStatus == ResultStatus.Success)
 {
-    <table class="table table-bordered">
+       <div class="table-responsive">
+           <table class="table table-striped table-bordered" >
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Ad</th>
                 <th>Açıklama</th>
                 <th>Aktif mi?</th>
+                <th>Oluşturulma Tarihi</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +22,14 @@
                        <td>@i.Name</td>
                        <td>@i.Description</td>
                        <td>@i.IsActive</td>
+                       <td>@i.CreatedDate.ToShortDateString()</td>
                    </tr>
                 }
           
         </tbody>
     </table>
+       </div>
+
+    
     
 }
